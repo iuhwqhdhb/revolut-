@@ -1,0 +1,77 @@
+name: Build unsigned IPA
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build iOS app (unsigned)
+    runs-on: macos-15
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare bundled web assets
+        run: bash ios/prepare-web.sh
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        working-directory: ios
+        run: |
+          xcodegen generate
+          grep -m1 objectVersion RevolutDemo.xcodeproj/project.pbxproj || true
+
+      - name: Show build environment
+        run: xcodebuild -version
+
+      # No Apple Developer account is required: the app is built without a
+      # signature, so the resulting IPA must be re-signed before it can be
+      # installed (Sideloadly, AltStore, or `codesign` + a provisioning profile).
+      - name: Build (unsigned)
+        working-directory: ios
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project RevolutDemo.xcodeproj \
+            -scheme RevolutDemo \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package IPA
+        working-directory: ios
+        run: |
+          set -euo pipefail
+          APP_PATH="$(find build/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' -type d | head -n 1)"
+          if [ -z "$APP_PATH" ]; then
+            echo "No .app bundle was produced." >&2
+            exit 1
+          fi
+          echo "App bundle: $APP_PATH"
+          rm -rf Payload RevolutDemo.ipa
+          mkdir Payload
+          cp -R "$APP_PATH" Payload/
+          zip -qry RevolutDemo.ipa Payload
+          ls -lh RevolutDemo.ipa
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: RevolutDemo-ipa
+          path: ios/RevolutDemo.ipa
+          if-no-files-found: error
