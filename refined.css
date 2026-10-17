@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "Inter Demo";
+  src: url("assets/Inter-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root { font-family: "Inter Demo", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.home-page .home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 300px;
+  padding: 8px 20px 18px;
+  background: radial-gradient(ellipse 75% 65% at 66% 6%, #7374d9 0%, transparent 76%), linear-gradient(150deg, #3b338a 0%, #335cb0 52%, #192b60 100%);
+}
+.home-page .home-hero::before, .home-page .home-hero::after { display: none; }
+.home-page .home-hero > * { position: relative; z-index: 1; }
+.home-top { display: flex; align-items: center; gap: 8px; height: 46px; }
+.home-top .avatar { width: 35px; height: 35px; flex: 0 0 auto; background: #e6d8c7; color: #392c2a; border: 2px solid #ffffff88; font-size: 12px; }
+.home-search { display: flex; align-items: center; gap: 8px; height: 34px; flex: 1; min-width: 0; padding: 0 12px; border: 0; border-radius: 999px; background: rgba(255,255,255,.22); color: #f1f5ff; text-align: left; font-size: 12px; font-weight: 500; backdrop-filter: blur(9px); }
+.home-search svg { width: 16px; height: 16px; }
+.home-top-icon { width: 35px; height: 35px; border: 0; border-radius: 50%; background: rgba(255,255,255,.2); color: white; display: grid; place-items: center; flex: 0 0 auto; }
+.home-top-icon svg { width: 19px; height: 19px; }
+.hero-balance { text-align: center; padding: 43px 0 17px; }
+.hero-balance .balance { font-size: clamp(42px, 11.5vw, 51px); font-weight: 600; line-height: 1.08; letter-spacing: -.058em; text-shadow: 0 1px 14px #06194132; }
+.hero-balance .account-pill { margin-top: 13px; padding: 7px 12px; font-size: 12px; font-weight: 590; background: rgba(255,255,255,.25); border: 0; backdrop-filter: blur(12px); }
+.home-page .actions { margin-top: 0; }
+.home-page .action { font-size: 11px; font-weight: 580; gap: 9px; }
+.home-page .action .bubble { width: 52px; height: 52px; background: rgba(239,245,255,.22); backdrop-filter: blur(8px); }
+.home-page .bubble svg { width: 21px; height: 21px; stroke-width: 1.9; }
+.home-page .section-head:first-of-type { margin-top: 18px; }
+.home-account-list { display: grid; gap: 0; overflow: hidden; border: 1px solid #25262b; border-radius: 20px; background: #17181c; }
+.home-account-row { display: flex; align-items: center; gap: 12px; min-height: 62px; padding: 8px 14px; border: 0; border-bottom: 1px solid #292a30; background: transparent; text-align: left; color: white; }
+.home-account-row:last-child { border-bottom: 0; }
+.home-account-row .account-flag { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: #303139; font-size: 22px; }
+.flag-svg { display: block; width: 100%; height: 100%; }
+.home-account-row .account-flag { overflow: hidden; }
+.account-pill .flag-svg { width: 17px; height: 17px; border-radius: 50%; }
+.currency-icon .flag-svg { border-radius: 50%; }
+.home-account-row span:nth-child(2) { flex: 1; min-width: 0; }
+.home-account-row strong { display: block; font-size: 13px; font-weight: 630; }
+.home-account-row small { display: block; color: #858790; margin-top: 4px; font-size: 11px; }
+.home-account-row b { font-size: 13px; font-weight: 620; white-space: nowrap; }
+.fx-reference { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 0 0; padding: 14px 16px; border: 1px solid #292b32; border-radius: 18px; background: #191b21; color: #f7f7f9; text-align: left; }
+.fx-reference strong { display: block; font-size: 13px; font-weight: 620; }
+.fx-reference small { display: block; margin-top: 5px; font-size: 11px; color: #9fa3af; line-height: 1.35; }
+.fx-refresh { width: 29px; height: 29px; flex: 0 0 auto; border-radius: 50%; display: grid; place-items: center; background: #292d39; font-size: 21px; color: #b8c7ff; }
+.fx-disclosure { color: #a2a6b3; font-size: 11px; line-height: 1.45; margin: 11px 0 0; }
+.refined-spending { display: block; width: 100%; color: white; text-align: left; margin-bottom: 10px; background: #191b22; }
+.refined-spending .feature-top { display: flex; }
+.refined-spending .feature-total { display: block; font-weight: 600; }
+.refined-spending .section-caption { display: block; }
+.refined-spending .bar-mini { display: flex; }
+.refined-spending .bar-mini span { background: #6178d6; }
+.page-heading h1, .sheet-head h2 { font-weight: 620; letter-spacing: -.055em; }
+.section-head h2 { font-size: 19px; font-weight: 630; letter-spacing: -.035em; }
+.brand-line { font-size: 16px; font-weight: 690; }
+.merchant-icon { border-radius: 50%; font-size: 17px; }
+.tx-name { font-size: 14px; font-weight: 600; }
+.tx-amount { font-size: 14px; font-weight: 600; }
+.bottom-nav { background: #111215; border-top-color: #22242a; }
+.nav-item.active .nav-icon { background: transparent; }
+.nav-item.active { color: white; font-weight: 650; }
+.nav-item:not(.active) { color: #878993; }
+.card-art { border-radius: 20px; background: radial-gradient(circle at 70% 20%, #f17fe1 0, transparent 32%), linear-gradient(124deg, #351b78, #8c32bb 48%, #c81e79); }
+.card-art.virtual { background: radial-gradient(circle at 15% 25%, #6376d3 0, transparent 36%), linear-gradient(128deg, #1c204c, #4954ac 54%, #806db4); }
+.card-art:before { border-color: #ffffff12; }
+.card-art:after { border-color: #ffffff12; }
+.card-brand { font-weight: 680; }
+.segmented { background: #202126; }
+.segmented button.selected { background: #eceef4; color: #191b21; }
+.analytics-hero { background: radial-gradient(circle at 84% -40%,#536bc5,transparent 55%),linear-gradient(130deg,#24396f,#1e2440); }
+.analytics-hero .compare { color: #ced5ef; }
+.chart-col small { white-space: nowrap; font-size: 9px; }
+.page-heading > svg { width: 21px; height: 21px; flex: 0 0 auto; color: #9b9da9; }
+.transaction .tx-meta { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.transaction .tx-name, .transaction .tx-sub { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.transaction .tx-sub { margin-top: 4px; }
+.transaction .tx-amount { flex: 0 0 auto; }
+.sheet { background: #1c1d22; }
+.primary { border-radius: 999px; background: #f7f8fa; color: #14151b; }
+.secondary { border-radius: 999px; }
+.text-field, .money-field { background: #292b32; }
+
+@media (max-width: 360px) {
+  .home-top { gap: 6px; }
+  .home-top-icon { width: 32px; height: 32px; }
+  .home-search { padding: 0 9px; }
+  .home-page .home-hero { min-height: 292px; }
+  .hero-balance { padding-top: 36px; }
+}
+
+/* Match the Phantom demo's 393-point canvas and content scale. */
+html, body { background: #000; }
+.desktop-backdrop { display: none; }
+.phone { width: min(100%, 393px); height: 100dvh; margin: 0 auto; border: 0; border-radius: 0; box-shadow: none; }
+.page { padding-left: 20px; padding-right: 20px; }
+.home-page .home-hero { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
+.avatar, .home-top .avatar { width: 44px; height: 44px; font-size: 14px; }
+.home-top { height: 52px; gap: 7px; }
+.home-search { height: 40px; font-size: 14px; }
+.home-top-icon, .round-icon { width: 40px; height: 40px; }
+.home-page .action .bubble { width: 52px; height: 52px; }
+.section-head h2 { font-size: 21px; }
+.home-account-row { min-height: 62px; }
+.home-account-row .account-flag { width: 40px; height: 40px; }
+.home-account-row strong { font-size: 16px; }
+.home-account-row small { font-size: 13px; }
+.home-account-row b { font-size: 16px; }
+.transaction { min-height: 75px; gap: 12px; }
+.merchant-icon { width: 40px; height: 40px; }
+.tx-name { font-size: 16px; }
+.tx-sub { font-size: 13px; }
+.tx-amount { font-size: 16px; }
+.tx-amount small { font-size: 12px; }
+.merchant-logo { display: block; width: 25px; height: 25px; object-fit: contain; filter: brightness(0) invert(1); }
+.merchant-icon.blue { background: #24569d; }
+.merchant-icon.green { background: #246d4a; }
+.merchant-icon.pink { background: #a92748; }
+.merchant-icon.slate { background: #2c2e34; }
+.revolut-logo-wrap { width: 26px; height: 26px; border-radius: 7px; background: #fff; display: grid; place-items: center; }
+.revolut-logo-wrap img { display: block; width: 17px; height: 17px; }
+.card-wordmark { display: inline-flex; align-items: center; gap: 7px; }
+.card-wordmark img { width: 19px; height: 19px; filter: brightness(0) invert(1); }
+.card-visa img { display: block; width: 48px; height: 27px; filter: brightness(0) invert(1); }
+.card-control span { width: 52px; height: 52px; }
+.contact .contact-avatar { width: 58px; height: 58px; }
+.sheet-head h2 { font-size: 24px; }
+.primary { min-height: 54px; font-size: 17px; }
+
+@media (max-width: 393px) {
+  .phone { width: 100%; }
+}
+
+/* Frosted controls sit over the account wallpaper; text and balances stay opaque. */
+.home-search, .home-top-icon, .hero-balance .account-pill, .home-page .action .bubble {
+  background: rgba(244, 247, 255, .16);
+  border: 1px solid rgba(255, 255, 255, .20);
+  -webkit-backdrop-filter: blur(22px) saturate(155%);
+  backdrop-filter: blur(22px) saturate(155%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.23), 0 6px 20px rgba(10, 19, 62, .11);
+}
+.home-search { background: rgba(241, 245, 255, .20); }
+.home-top-icon, .home-page .action .bubble { border-radius: 50%; }
+.home-page .action:active .bubble, .home-top-icon:active { background: rgba(255,255,255,.29); }
+.hero-balance .account-pill { padding: 8px 13px; }
+
+/* Let scrollable content pass behind the navigation so the glass effect is visible. */
+.app-scroll { bottom: 0; }
+.app-scroll { top: 0; }
+.page { padding-bottom: 112px; }
+.bottom-nav {
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  height: 66px;
+  padding: 5px 8px 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 25px;
+  background: rgba(36, 36, 40, .68);
+  -webkit-backdrop-filter: blur(28px) saturate(155%);
+  backdrop-filter: blur(28px) saturate(155%);
+  box-shadow: 0 8px 28px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.10);
+}
+.nav-item { border-radius: 18px; gap: 1px; font-size: 9px; }
+.nav-item.active { background: rgba(255,255,255,.105); }
+.nav-icon { height: 28px; }
+.nav-icon svg { width: 20px; height: 20px; }
+.home-indicator { background: rgba(255,255,255,.9); }
+
+.sheet-scrim {
+  background: rgba(0,0,0,.42);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.sheet {
+  background: rgba(29, 30, 38, .88);
+  border: 1px solid rgba(255,255,255,.11);
+  border-bottom: 0;
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  backdrop-filter: blur(28px) saturate(140%);
+}
+.sheet-head button, .secondary, .review-box { background: rgba(255,255,255,.075); }
+.round-icon, .card-control span {
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.07);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+/* Home composition based on the supplied dark account screenshot. */
+.app-scroll:has(.home-page) { background: #000; }
+.home-page .home-hero { min-height: 0; padding-top: 14px; padding-bottom: 13px; background: #000; }
+.home-page .home-top .avatar { background: #42a9e8; color: #fff; border: 0; }
+.home-page .home-search { background: rgba(34,34,38,.55); border: 1px solid rgba(255,255,255,.16); box-shadow: inset 0 1px 0 rgba(255,255,255,.07); color: #e9e9eb; }
+.home-page .home-top-icon { background: rgba(48,48,52,.72); border: 1px solid rgba(255,255,255,.08); box-shadow: none; }
+.home-page .hero-balance { padding: 65px 0 0; }
+.balance-context { font-size: 12px; font-weight: 500; color: #a5a5aa; margin-bottom: 3px; }
+.home-page .hero-balance .balance { font-size: clamp(40px, 11vw, 48px); font-weight: 670; line-height: 1; letter-spacing: -.055em; text-shadow: none; }
+.home-page .hero-balance .account-pill { margin-top: 12px; padding: 7px 14px; background: rgba(67,67,70,.72); border: 1px solid rgba(255,255,255,.06); box-shadow: none; font-size: 12px; }
+.hero-dots { display: flex; justify-content: center; gap: 4px; margin: 27px 0 18px; }
+.hero-dots i { width: 4px; height: 4px; border-radius: 50%; background: #727277; }
+.hero-dots i.active { background: #f5f5f7; }
+.home-page .actions { margin-top: 0; }
+.home-page .action { gap: 6px; font-size: 10px; }
+.home-page .action .bubble { width: 46px; height: 46px; border: 1px solid rgba(255,255,255,.04); background: rgba(50,50,54,.76); box-shadow: none; -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.home-page .action .bubble svg { width: 22px; height: 22px; }
+.home-activity-card { margin: 10px 0 12px; padding: 0 12px; border-radius: 19px; background: #17171a; border: 1px solid #202024; }
+.home-activity-card .transaction { min-height: 66px; border: 0; }
+.home-activity-card .merchant-icon { width: 37px; height: 37px; font-size: 16px; }
+.home-empty-activity { width: 100%; min-height: 66px; display: flex; align-items: center; gap: 12px; border: 0; background: none; color: #c6c6cb; text-align: left; font-size: 13px; }
+.activity-symbol { width: 33px; height: 33px; border-radius: 9px; display: grid; place-items: center; background: #303035; color: #fff; }
+.home-cards-panel { padding: 13px 14px 15px; border: 1px solid #202024; border-radius: 20px; background: #17171a; }
+.home-panel-heading { width: 100%; display: flex; align-items: center; gap: 3px; padding: 0 0 10px; border: 0; background: none; color: #b9b9bf; text-align: left; font-size: 12px; }
+.home-panel-heading svg { width: 14px; height: 14px; }
+.home-mini-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
+.home-mini-cards button { display: flex; flex-direction: column; align-items: center; border: 0; padding: 0; background: none; color: #e8e8ec; font-size: 11px; min-width: 0; }
+.home-mini-cards strong { margin-top: 5px; font-size: 11px; font-weight: 590; }
+.home-mini-cards button > small { margin-top: 2px; color: #85858b; font-size: 10px; }
+.mini-card-art { position: relative; display: grid; place-items: center; width: 72px; height: 46px; overflow: hidden; border-radius: 5px; color: #fff; }
+.mini-card-art.disposable { background: linear-gradient(145deg,#444349,#2f2f34 68%,#454249); }
+.mini-card-art.disposable > span { font-size: 21px; }
+.mini-card-art.disposable small { position: absolute; right: 5px; bottom: 3px; color: #e64b55; font-size: 12px; }
+.mini-card-art.blue { background: linear-gradient(145deg,#13164a,#1e3ba0); border: 1px solid #4e6bd1; }
+.mini-card-art.blue img { width: 17px; height: 17px; filter: brightness(0) invert(1); }
+.mini-card-art.blue small { position: absolute; right: 3px; bottom: 2px; font-size: 8px; font-weight: 800; }
+.mini-card-art.new { background: #303035; }
+.mini-card-art.new svg { width: 23px; height: 23px; }
+.home-page .section-head { margin-top: 20px; }
+
+/* Layout and account editor visible in the supplied wallet walkthrough. */
+.home-page .hero-balance .long-balance { font-size: clamp(32px, 9.3vw, 39px); white-space: nowrap; }
+.bottom-nav { grid-template-columns: repeat(5, minmax(0, 1fr)); padding-left: 5px; padding-right: 5px; }
+.nav-item { min-width: 0; font-size: 8px; }
+.nav-item .nav-icon svg { width: 19px; height: 19px; }
+.wealth-panel { margin-top: 12px; padding: 13px 14px 8px; border: 1px solid #202024; border-radius: 20px; background: #17171a; }
+.wealth-total { display: block; margin: 0 0 9px; font-size: 21px; line-height: 1.1; letter-spacing: -.045em; }
+.wealth-row { width: 100%; display: flex; align-items: center; gap: 9px; min-height: 43px; padding: 3px 0; border: 0; border-top: 1px solid #29292d; background: transparent; color: #ededf0; text-align: left; font-size: 12px; }
+.wealth-row span:nth-child(2) { flex: 1; }
+.wealth-row b { font-size: 12px; font-weight: 550; }
+.wealth-icon { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font-weight: 700; }
+.wealth-icon.cash { background: #4284e7; }
+.wealth-icon.invest { background: #b29aff; color: #171123; }
+.wealth-icon.crypto { background: #ee8c2e; }
+.wealth-icon svg { width: 16px; height: 16px; }
+.full-screen-sheet { height: 94%; max-height: 94%; padding: 0 16px 22px; background: #17171b; border-radius: 24px 24px 0 0; }
+.full-screen-sheet .sheet-head { min-height: 52px; margin-bottom: 4px; }
+.full-screen-sheet .sheet-head h2 { font-size: 16px; letter-spacing: -.025em; }
+.full-screen-sheet .sheet-content { padding-bottom: 25px; }
+.profile-header { text-align: center; padding: 3px 0 20px; }
+.profile-avatar { width: 72px; height: 72px; margin: 0 auto 12px; border-radius: 50%; display: grid; place-items: center; background: #46a6e7; color: white; font-size: 23px; font-weight: 520; }
+.profile-header h3 { margin: 0; color: white; font-size: 18px; font-weight: 630; }
+.profile-header p { margin: 3px 0 6px; color: #a4a4ac; font-size: 11px; }
+.profile-menu { overflow: hidden; border-radius: 13px; background: #222227; }
+.profile-menu .sheet-option { min-height: 42px; padding: 5px 12px; border-bottom: 1px solid #2b2b30; }
+.profile-menu .sheet-option:last-child { border-bottom: 0; }
+.profile-menu .opt-icon { width: 20px; height: 20px; background: none; font-size: 14px; }
+.profile-menu .opt-text { font-size: 12px; }
+.profile-menu .opt-text small { font-size: 9px; }
+.profile-logout { margin-top: 12px; }
+.settings-subtitle { color: #82828a; font-size: 10px; margin: -3px 0 8px; }
+.settings-form { display: grid; gap: 0; }
+.settings-row { min-height: 40px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #29292e; color: #d4d4d9; font-size: 11px; }
+.settings-row > span { width: 33%; flex: 0 0 auto; }
+.settings-row input, .settings-row select, .settings-row button { flex: 1; min-width: 0; height: 30px; padding: 0 9px; border: 1px solid #28282d; border-radius: 7px; background: #101014; color: #ededf0; font: inherit; font-size: 11px; }
+.settings-row button { text-align: center; }
+.settings-group-label { padding: 15px 0 5px; color: #77777f; font-size: 8px; letter-spacing: .12em; }
+.theme-picks { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; }
+.theme-pick { padding: 0; border: 0; background: transparent; color: #c5c5cc; }
+.theme-preview { display: block; height: 34px; border: 1px solid #484850; border-radius: 7px; }
+.theme-preview.glow { background: radial-gradient(circle at 20% 30%, #35e0c1, #006c63 50%, #063d3d); }
+.theme-preview.minimal { background: #08080a; }
+.theme-preview.colors { background: radial-gradient(circle at 75% 10%, #553dc8, #10256a 50%, #16153a); }
+.theme-pick.selected .theme-preview { outline: 2px solid #f5f5f8; outline-offset: 2px; }
+.theme-pick small { display: block; margin-top: 5px; font-size: 9px; }
+.settings-save { width: 100%; margin-top: 18px; min-height: 42px; font-size: 13px; }
+.settings-footer { margin: 14px 0 0; text-align: center; color: #888890; font-size: 10px; line-height: 1.5; }
+.portfolio-top { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; }
+.portfolio-top .avatar { background: #42a9e8; color: white; border: 0; }
+.portfolio-symbol { display: grid; place-items: center; width: 70px; height: 70px; margin: 70px auto 16px; border-radius: 50%; background: #24242b; color: #ececef; font-size: 31px; }
+.portfolio-symbol svg { width: 34px; height: 34px; }
+.portfolio-balance { text-align: center; font-size: 31px; font-weight: 650; letter-spacing: -.05em; }
+.portfolio-page .section-description { text-align: center; }
+.portfolio-info { margin: 38px 0 14px; padding: 17px; border-radius: 17px; background: #1b1b20; color: #b5b5bd; font-size: 13px; line-height: 1.45; }
+.portfolio-page .secondary { width: 100%; }
+.phone[data-theme="glow"] .home-page .home-hero { background: radial-gradient(ellipse at top, #095b53, #000 65%); }
+.phone[data-theme="colors"] .home-page .home-hero { background: radial-gradient(ellipse at top, #202781, #000 65%); }
+
+/* Official Revolut artwork, kept at its original proportions. */
+.brand-line .official-wordmark { display: block; width: 92px; height: auto; max-height: 24px; object-fit: contain; filter: invert(1); }
+.card-official-wordmark { display: block; width: 107px; height: auto; max-height: 27px; object-fit: contain; filter: invert(1); }
+.nav-revolut-mark { display: block; width: 22px; height: 22px; object-fit: contain; }
+.mini-card-art.blue img { width: 19px; height: 19px; filter: none; }
+.mini-card-art .mini-card-brand { width: 19px; height: 19px; }
+.mini-card-art.disposable small { color: #d5d5d8; font-size: 6px; letter-spacing: .03em; }
+.mini-card-art.blue .mini-visa { position: absolute; right: 4px; bottom: 2px; width: 21px; height: 10px; filter: invert(1); }
+
+.wealth-row .wealth-icon { flex: 0 0 auto; }
+.wealth-row .wealth-icon svg { width: 17px; height: 17px; stroke-width: 2; }
+.wealth-row.funds-row { min-height: 50px; }
+.wealth-row.funds-row span:nth-child(2) small { display: block; margin-top: 2px; color: #77777e; font-size: 9px; }
+.wealth-row.funds-row b { display: flex; align-items: center; gap: 4px; }
+.wealth-row.funds-row b svg { width: 12px; height: 12px; color: #919198; }
+.wealth-icon.funds { background: #ee7549; }
+.wealth-icon.invest { background: #26a6d6; color: white; }
+.wealth-icon.crypto { background: #a846d7; color: white; }
+.refined-spending { margin-top: 12px; border-color: #202024; border-radius: 20px; background: #17171a; }
+.refined-spending .feature-top { color: #b9b9bf; font-size: 12px; }
+.refined-spending .feature-top span:last-child { color: #92929a; }
+.refined-spending .feature-total { margin-top: 5px; font-size: 23px; letter-spacing: -.04em; }
+.refined-spending .bar-mini { margin-top: 17px; }
+.refined-spending .bar-mini span { background: #c9c9ce; }
+.profile-sheet { top: 0; bottom: 0; height: 100%; max-height: 100%; border: 0; border-radius: 0; padding: 0 20px 18px; background: #08080b; }
+.profile-top { display: flex; justify-content: space-between; align-items: center; min-height: 64px; }
+.profile-top button { display: inline-flex; align-items: center; justify-content: center; border: 1px solid #45454c; background: #1e1f25; color: #f6f6f8; }
+.profile-close { width: 38px; height: 38px; border-radius: 50%; }
+.profile-close svg { width: 18px; height: 18px; }
+.profile-upgrade { gap: 5px; min-height: 31px; padding: 0 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.profile-upgrade svg { width: 14px; height: 14px; }
+.profile-sheet .sheet-content { overflow-y: auto; }
+.profile-sheet .profile-header { padding: 14px 0 23px; }
+.profile-sheet .profile-avatar { position: relative; width: 74px; height: 74px; margin-bottom: 12px; font-size: 24px; }
+.profile-photo { position: absolute; right: -3px; bottom: -2px; width: 27px; height: 27px; display: grid; place-items: center; border: 2px solid #08080b; border-radius: 50%; background: #2c2d33; color: white; }
+.profile-photo svg { width: 15px; height: 15px; }
+.profile-sheet .profile-header h3 { font-size: 18px; }
+.profile-sheet .profile-menu { background: #212126; }
+.profile-menu .opt-icon svg { width: 17px; height: 17px; stroke-width: 2; }
+.profile-menu .sheet-option > svg:last-child { display: none; }
+.profile-sheet .profile-menu .sheet-option { min-height: 45px; padding: 6px 12px; }
+.profile-sheet .profile-menu .sheet-option:first-child { min-height: 52px; }
+.card-art { background: linear-gradient(148deg, #102776 0%, #1b3aa7 60%, #0f1e60 100%); }
+.card-art.virtual { background: linear-gradient(148deg, #3e3e47, #202127 75%); }

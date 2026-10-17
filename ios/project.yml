@@ -1,0 +1,48 @@
+name: RevolutDemo
+
+options:
+  bundleIdPrefix: com.example
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "16.0"
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+
+targets:
+  RevolutDemo:
+    type: application
+    platform: iOS
+    sources:
+      # Native app sources, Info.plist, and the asset catalog.
+      - path: RevolutDemo
+        excludes:
+          - Info.plist
+      # The web demo, copied in by prepare-web.sh, added as a folder reference
+      # so it lands in the bundle as Web/ with its asset paths intact.
+      - path: Web
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: RevolutDemo
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.revolutdemo
+        INFOPLIST_FILE: RevolutDemo/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO
+        TARGETED_DEVICE_FAMILY: "1"
+        SUPPORTS_MACCATALYST: NO
+
+schemes:
+  RevolutDemo:
+    build:
+      targets:
+        RevolutDemo: all
+    run:
+      config: Debug
+    archive:
+      config: Release
